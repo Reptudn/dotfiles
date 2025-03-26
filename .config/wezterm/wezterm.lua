@@ -23,7 +23,7 @@ config.window_padding = {
 }
 
 -- Define the background image path
-local bg_image = os.getenv("HOME") .. "/.config/wezterm/images/animated.gif"
+local bg_image = os.getenv("HOME") .. "/.config/wezterm/assets/animated.gif"
 
 -- Function to check if window is fullscreen
 local function is_fullscreen(window)

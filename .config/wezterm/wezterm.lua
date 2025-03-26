@@ -7,7 +7,9 @@ config.color_scheme = "JetBrains Darcula"
 config.window_background_opacity = 0.5
 config.macos_window_background_blur = 42
 config.window_decorations = "RESIZE"
+
 -- config.hide_tab_bar_if_only_one_tab = true
+
 config.max_fps = 60
 
 config.prefer_egl = true
@@ -22,16 +24,13 @@ config.window_padding = {
     bottom = 1,
 }
 
--- Define the background image path
 local bg_image = os.getenv("HOME") .. "/.config/wezterm/assets/animated.gif"
 
--- Function to check if window is fullscreen
 local function is_fullscreen(window)
     local dimensions = window:get_dimensions()
     return dimensions.is_full_screen
 end
 
--- Event handler for window resizing
 wezterm.on('window-resized', function(window, pane)
     local overrides = window:get_config_overrides() or {}
     if is_fullscreen(window) then
@@ -42,7 +41,6 @@ wezterm.on('window-resized', function(window, pane)
     window:set_config_overrides(overrides)
 end)
 
--- Initial configuration (background image not set)
 config.window_background_image = nil
 
 config.tab_bar_at_bottom = true
